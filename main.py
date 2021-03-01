@@ -54,13 +54,6 @@ def print_board():
 # output: computer move
 # function: returns bot move
 def get_computer_move():
-    '''combinations = [['A1', 'A3', 'C2', 'B2'], ['B2', 'B3', 'A1', 'C1'], ['B1', 'B2', 'C3', 'A3'], ['C1', 'C3', 'A2', 'B2']]
-    for combination in combinations:
-      if board[combination[0]] == board[combination[1]] == '  X ' or board[combination[2]] == board[combination[3]] == '  X ':
-        return '''
-    # dict: key = 'A1'; value = array of [['A2', 'A3'], ['C1', 'B1'], ['B2', 'C3']]
-    # key = 'A3'; value = [['A1',
-    # iterate through keys (for loop), is condition true
     dict1 = {'A1': [['A2', 'A3'], ['C1', 'B1'], ['B2', 'C3']],
               'A3': [['A1', 'A2'], ['C3', 'B3'], ['C1', 'B2']],
               'C1': [['C2', 'C3'], ['A1', 'B1'], ['B2', 'A3']],
@@ -125,72 +118,7 @@ def get_computer_move():
             if board[p0] == board[p1] == '  O ':
                 if is_valid_move(move) == True:
                     return move
-    '''if board['A2'] == board['A3'] == '  X ' or board['C1'] == board['B1'] == '  X ' or board['B2'] == board[
-        'C3'] == '  X ':
-        if is_valid_move('A1') == True:
-            return 'A1'
-    if board['A1'] == board['A3'] == '  X ' or board['C2'] == board['B2'] == '  X ':
-        if is_valid_move('A2') == True:
-            return 'A2'
-    if board['A1'] == board['A2'] == '  X ' or board['C3'] == board['B3'] == '  X ' or board['C1'] == board[
-        'B2'] == '  X ':
-        if is_valid_move('A3') == True:
-            return 'A3'
-    if board['B2'] == board['B3'] == '  X ' or board['A1'] == board['C1'] == '  X ':
-        if is_valid_move('B1') == True:
-            return 'B1'
-    if board['B1'] == board['B3'] == '  X ' or board['C2'] == board['A2'] == '  X ' or board['C1'] == board[
-        'A3'] == '  X ' or board['C3'] == board['A1'] == '  X ':
-        if is_valid_move('B2') == True:
-            return 'B2'
-    if board['B1'] == board['B2'] == '  X ' or board['C3'] == board['A3'] == '  X ':
-        if is_valid_move('B3') == True:
-            return 'B3'
-    if board['C2'] == board['C3'] == '  X ' or board['A1'] == board['B1'] == '  X ' or board['B2'] == board[
-        'A3'] == '  X ':
-        if is_valid_move('C1') == True:
-            return 'C1'
-    if board['C1'] == board['C3'] == '  X ' or board['A2'] == board['B2'] == '  X ':
-        if is_valid_move('C2') == True:
-            return 'C2'
-    if board['C1'] == board['C2'] == '  X ' or board['A3'] == board['B3'] == '  X ' or board['A1'] == board[
-        'B2'] == '  X ':
-        if is_valid_move('C3') == True:
-            return 'C3'
 
-    if board['A2'] == board['A3'] == '  O ' or board['C1'] == board['B1'] == '  O ' or board['B2'] == board[
-        'C3'] == '  O ':
-        if is_valid_move('A1') == True:
-            return 'A1'
-    if board['A1'] == board['A3'] == '  O ' or board['C2'] == board['B2'] == '  O ':
-        if is_valid_move('A2') == True:
-            return 'A2'
-    if board['A1'] == board['A2'] == '  O ' or board['C3'] == board['B3'] == '  O ' or board['C1'] == board[
-        'B2'] == '  O ':
-        if is_valid_move('A3') == True:
-            return 'A3'
-    if board['B2'] == board['B3'] == '  O ' or board['A1'] == board['C1'] == '  O ':
-        if is_valid_move('B1') == True:
-            return 'B1'
-    if board['B1'] == board['B3'] == '  O ' or board['C2'] == board['A2'] == '  O ' or board['C1'] == board[
-        'A3'] == '  O ' or board['C3'] == board['A1'] == '  O ':
-        if is_valid_move('B2') == True:
-            return 'B2'
-    if board['B1'] == board['B2'] == '  O ' or board['C3'] == board['A3'] == '  O ':
-        if is_valid_move('B3') == True:
-            return 'B3'
-    if board['C2'] == board['C3'] == '  O ' or board['A1'] == board['B1'] == '  O ' or board['B2'] == board[
-        'A3'] == '  O ':
-        if is_valid_move('C1') == True:
-            return 'C1'
-    if board['C1'] == board['C3'] == '  O ' or board['A2'] == board['B2'] == '  O ':
-        if is_valid_move('C2') == True:
-            return 'C2'
-    if board['C1'] == board['C2'] == '  O ' or board['A3'] == board['B3'] == '  O ' or board['A1'] == board[
-        'B2'] == '  O ':
-        if is_valid_move('C3') == True:
-            return 'C3'
-'''
     if board['C3'] == '  X ' and board['B2'] == '  O ' and board['A1'] == 'none':
         return 'A1'
     if board['A1'] == '  X ' and board['B2'] == '  O ' and board['C3'] == 'none':
@@ -284,72 +212,6 @@ def get_computer_move_o():
             if board[p0] == board[p1] == '  X ':
                 if is_valid_move(move) == True:
                     return move
-
-    if board['A2'] == board['A3'] == '  O ' or board['C1'] == board['B1'] == '  O ' or board['B2'] == board[
-        'C3'] == '  O ':
-        if is_valid_move('A1') == True:
-            return 'A1'
-    if board['A1'] == board['A3'] == '  O ' or board['C2'] == board['B2'] == '  O ':
-        if is_valid_move('A2') == True:
-            return 'A2'
-    if board['A1'] == board['A2'] == '  O ' or board['C3'] == board['B3'] == '  O ' or board['C1'] == board[
-        'B2'] == '  O ':
-        if is_valid_move('A3') == True:
-            return 'A3'
-    if board['B2'] == board['B3'] == '  O ' or board['A1'] == board['C1'] == '  O ':
-        if is_valid_move('B1') == True:
-            return 'B1'
-    if board['B1'] == board['B3'] == '  O ' or board['C2'] == board['A2'] == '  O ' or board['C1'] == board[
-        'A3'] == '  O ' or board['C3'] == board['A1'] == '  O ':
-        if is_valid_move('B2') == True:
-            return 'B2'
-    if board['B1'] == board['B2'] == '  O ' or board['C3'] == board['A3'] == '  O ':
-        if is_valid_move('B3') == True:
-            return 'B3'
-    if board['C2'] == board['C3'] == '  O ' or board['A1'] == board['B1'] == '  O ' or board['B2'] == board[
-        'A3'] == '  O ':
-        if is_valid_move('C1') == True:
-            return 'C1'
-    if board['C1'] == board['C3'] == '  O ' or board['A2'] == board['B2'] == '  O ':
-        if is_valid_move('C2') == True:
-            return 'C2'
-    if board['C1'] == board['C2'] == '  O ' or board['A3'] == board['B3'] == '  O ' or board['A1'] == board[
-        'B2'] == '  O ':
-        if is_valid_move('C3') == True:
-            return 'C3'
-
-    if board['A2'] == board['A3'] == '  X ' or board['C1'] == board['B1'] == '  X ' or board['B2'] == board[
-        'C3'] == '  X ':
-        if is_valid_move('A1') == True:
-            return 'A1'
-    if board['A1'] == board['A3'] == '  X ' or board['C2'] == board['B2'] == '  X ':
-        if is_valid_move('A2') == True:
-            return 'A2'
-    if board['A1'] == board['A2'] == '  X ' or board['C3'] == board['B3'] == '  X ' or board['C1'] == board[
-        'B2'] == '  X ':
-        if is_valid_move('A3') == True:
-            return 'A3'
-    if board['B2'] == board['B3'] == '  X ' or board['A1'] == board['C1'] == '  X ':
-        if is_valid_move('B1') == True:
-            return 'B1'
-    if board['B1'] == board['B3'] == '  X ' or board['C2'] == board['A2'] == '  X ' or board['C1'] == board[
-        'A3'] == '  X ' or board['C3'] == board['A1'] == '  X ':
-        if is_valid_move('B2') == True:
-            return 'B2'
-    if board['B1'] == board['B2'] == '  X ' or board['C3'] == board['A3'] == '  X ':
-        if is_valid_move('B3') == True:
-            return 'B3'
-    if board['C2'] == board['C3'] == '  X ' or board['A1'] == board['B1'] == '  X ' or board['B2'] == board[
-        'A3'] == '  X ':
-        if is_valid_move('C1') == True:
-            return 'C1'
-    if board['C1'] == board['C3'] == '  X ' or board['A2'] == board['B2'] == '  X ':
-        if is_valid_move('C2') == True:
-            return 'C2'
-    if board['C1'] == board['C2'] == '  X ' or board['A3'] == board['B3'] == '  X ' or board['A1'] == board[
-        'B2'] == '  X ':
-        if is_valid_move('C3') == True:
-            return 'C3'
 
     # X starts from corner
     if board['C1'] == '  X ' and board['A3'] == '  X ' and board['B2'] == '  O ' and board['A1'] == 'none' and board[
